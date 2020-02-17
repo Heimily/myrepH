@@ -1,0 +1,729 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 17 13:10:53 2020
+
+@author: heimily.duran
+"""
+print ("Python Examples Heimily)
+>>> 2 + 2
+
+>>> 50 - 5*6
+
+>>> (50 - 5*6) / 4
+
+>>> 8 / 5  # division always returns a floating point number
+
+
+>>> 17 // 3  # floor division discards the fractional part
+
+>>> 17 % 3  # the % operator returns the remainder of the division
+
+>>> 5 * 3 + 2  # result * divisor + remainder
+
+>>> 5 ** 2  # 5 squared
+
+>>> 2 ** 7  # 2 to the power of 7
+
+>>> width = 20
+>>> height = 5 * 9
+>>> width * height
+
+
+>>> n  # try to access an undefined variable
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#error
+  
+>>> tax = 12.5 / 100
+>>> price = 100.50
+>>> price * tax
+
+>>> price + _
+
+>>> round(_, 2)
+
+#String
+
+>>> 'spam eggs'  # single quotes
+
+>>> 'doesn\'t'  # use \' to escape the single quote...
+"doesn't"
+>>> "doesn't"  # ...or use double quotes instead
+
+>>> '"Yes," they said.'
+
+>>> '"Isn\'t," they said.'
+
+>>> '"Isn\'t," they said.'
+
+>>> print('"Isn\'t," they said.')
+
+>>> s = 'First line.\nSecond line.'  # \n means newline
+>>> s  # without print(), \n is included in the output
+'First line.\nSecond line.'
+>>> print(s)  # with print(), \n produces a new line
+
+>>> print('C:\some\name')  # here \n means newline!
+
+>>> print(r'C:\some\name')  # note the r before the quote
+
+print("""\
+Usage: thingy [OPTIONS]
+     -h                        Display this usage message
+     -H hostname               Hostname to connect to
+""")
+
+>>> # 3 times 'un', followed by 'ium'
+>>> 3 * 'un' + 'ium'
+
+>>> 'Py' 'thon'
+
+>>> text = ('Put several strings within parentheses '
+...         'to have them joined together.')
+>>> text
+
+>>> prefix = 'Py'
+>>> prefix 'thon'  # can't concatenate a variable and a string literal
+  File "<stdin>", line 1
+    prefix 'thon'
+                ^
+#SyntaxError: invalid syntax
+>>> ('un' * 3) 'ium'
+  File "<stdin>", line 1
+    ('un' * 3) 'ium'
+                   ^
+#SyntaxError: invalid syntax
+                   
+>>> prefix + 'thon'         
+
+>>> word = 'Python'
+
+>>> word[0]  # character in position 0
+>>> word[5]  # character in position 5       
+>>> word[-1]  # last character
+>>> word[-2]  # second-last character
+>>> word[-6]
+>>> word[0:2]  # characters from position 0 (included) to 2 (excluded)
+>>> word[2:5]  # characters from position 2 (included) to 5 (excluded)
+
+>>> word[:2] + word[2:]
+>>> word[:4] + word[4:]
+
+>>> word[:2]   # character from the beginning to position 2 (excluded)
+>>> word[4:]   # characters from position 4 (included) to the end
+>>> word[-2:]  # characters from the second-last (included) to the end
+
+>>> word[4:42]
+>>> word[42:]
+
+>>> word[0] = 'J'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: 'str' object does not support item assignment
+>>> word[2:] = 'py'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: 'str' object does not support item assignment
+  
+>>> 'J' + word[1:]
+>>> word[:2] + 'py'
+
+>>> s = 'supercalifragilisticexpialidocious'
+>>> len(s)
+
+#List
+
+>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+
+>>> squares[0]  # indexing returns the item
+>>> squares[-1]
+>>> squares[-3:]  # slicing returns a new list
+>>> squares[:]
+>>> squares + [36, 49, 64, 81, 100]
+
+>>> cubes = [1, 8, 27, 65, 125]  # something's wrong here
+>>> 4 ** 3  # the cube of 4 is 64, not 65!
+>>> cubes[3] = 64  # replace the wrong value
+>>> cubes
+>>> cubes.append(216)  # add the cube of 6
+>>> cubes.append(7 ** 3)  # and the cube of 7
+>>> cubes
+
+>>> letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>>> letters
+>>> # replace some values
+>>> letters[2:5] = ['C', 'D', 'E']
+>>> letters
+>>> # now remove them
+>>> letters[2:5] = []
+>>> letters
+>>> # clear the list by replacing all the elements with an empty list
+>>> letters[:] = []
+>>> letters
+
+>>> letters = ['a', 'b', 'c', 'd']
+>>> len(letters)
+
+>>> a = ['a', 'b', 'c']
+>>> n = [1, 2, 3]
+>>> x = [a, n]
+>>> x
+>>> x[0]
+>>> x[0][1]
+
+>>> # Fibonacci series:
+... # the sum of two elements defines the next
+... a, b = 0, 1
+>>> while a < 10:
+...     print(a)
+...     a, b = b, a+b
+...
+
+>>> i = 256*256
+>>> print('The value of i is', i)
+
+>>> a, b = 0, 1
+>>> while a < 1000:
+...     print(a, end=',')
+...     a, b = b, a+b
+...
+
+# if statment 
+
+>>> x = int(input("Please enter an integer: "))
+
+>>> if x < 0:
+...     x = 0
+...     print('Negative changed to zero')
+... elif x == 0:
+...     print('Zero')
+... elif x == 1:
+...     print('Single')
+... else:
+...     print('More')
+...
+
+#for statment 
+>>> # Measure some strings:
+... words = ['cat', 'window', 'defenestrate']
+>>> for w in words:
+...     print(w, len(w))
+...
+
+# Strategy:  Iterate over a copy
+#error#####
+for user, status in users.copy().items():
+    if status == 'inactive':
+        del users[user]
+
+# Strategy:  Create a new collection
+active_users = {}
+for user, status in users.items():
+    if status == 'active':
+        active_users[user] = status
+        
+>>> for i in range(5):
+...     print(i)
+...
+
+range(5, 10)
+range(0, 10, 3)
+range(-10, -100, -30)
+
+>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+>>> for i in range(len(a)):
+...     print(i, a[i])
+...
+
+>>> print(range(10))
+
+>>> sum(range(4))  # 0 + 1 + 2 + 3
+
+>>> list(range(4))
+
+#break and continue Statements, and else Clauses on Loops
+
+>>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print(n, 'equals', x, '*', n//x)
+...             break
+...     else:
+...         # loop fell through without finding a factor
+...         print(n, 'is a prime number')
+...
+
+>>> for num in range(2, 10):
+...     if num % 2 == 0:
+...         print("Found an even number", num)
+...         continue
+...     print("Found a number", num)
+
+
+>>> while True:
+...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+...
+
+>>> class MyEmptyClass:
+...     pass
+...
+
+>>> def initlog(*args):
+...     pass   # Remember to implement this!
+...
+
+#Defining Functions
+
+>>> def fib(n):    # write Fibonacci series up to n
+...     """Print a Fibonacci series up to n."""
+...     a, b = 0, 1
+...     while a < n:
+...         print(a, end=' ')
+...         a, b = b, a+b
+...     print()
+...
+>>> # Now call the function we just defined:
+... fib(2000)
+
+>>> fib
+<function fib at 10042ed0>
+>>> f = fib
+>>> f(100)
+
+>>> fib(0)
+>>> print(fib(0))
+
+>>> def fib2(n):  # return Fibonacci series up to n
+...     """Return a list containing the Fibonacci series up to n."""
+...     result = []
+...     a, b = 0, 1
+...     while a < n:
+...         result.append(a)    # see below
+...         a, b = b, a+b
+...     return result
+...
+>>> f100 = fib2(100)    # call it
+>>> f100                # write the result
+
+#Default Argument Values
+
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+        
+
+i = 5
+
+def f(arg=i):
+    print(arg)
+
+i = 6
+f()
+
+def f(a, L=[]):
+    L.append(a)
+    return L
+
+print(f(1))
+print(f(2))
+print(f(3))
+
+#keyword
+def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.")
+    print("-- Lovely plumage, the", type)
+    print("-- It's", state, "!")
+
+parrot(1000)                                          # 1 positional argument
+parrot(voltage=1000)                                  # 1 keyword argument
+parrot(voltage=1000000, action='VOOOOOM')             # 2 keyword arguments
+parrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments
+parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
+parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
+
+parrot()                     # required argument missing
+parrot(voltage=5.0, 'dead')  # non-keyword argument after a keyword argument
+parrot(110, voltage=220)     # duplicate value for the same argument
+parrot(actor='John Cleese')  # unknown keyword argument
+#error
+
+>>> def function(a):
+...     pass
+...
+>>> function(0, a=0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: function() got multiple values for keyword argument 'a'
+  
+def cheeseshop(kind, *arguments, **keywords):
+    print("-- Do you have any", kind, "?")
+    print("-- I'm sorry, we're all out of", kind)
+    for arg in arguments:
+        print(arg)
+    print("-" * 40)
+    for kw in keywords:
+        print(kw, ":", keywords[kw])
+        
+cheeseshop("Limburger", "It's very runny, sir.",
+           "It's really very, VERY runny, sir.",
+           shopkeeper="Michael Palin",
+           client="John Cleese",
+           sketch="Cheese Shop Sketch")
+
+>>> def standard_arg(arg):
+...     print(arg)
+...
+>>> def pos_only_arg(arg, /):
+...     print(arg)
+...
+>>> def kwd_only_arg(*, arg):
+...     print(arg)
+...
+>>> def combined_example(pos_only, /, standard, *, kwd_only):
+...     print(pos_only, standard, kwd_only)
+#error
+
+>>> standard_arg(2)
+>>> standard_arg(arg=2)
+
+>>> pos_only_arg(1)
+1
+
+>>> pos_only_arg(arg=1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: pos_only_arg() got an unexpected keyword argument 'arg'
+  
+  >>> kwd_only_arg(3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: kwd_only_arg() takes 0 positional arguments but 1 was given
+
+>>> kwd_only_arg(arg=3)
+
+>>> combined_example(1, 2, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: combined_example() takes 2 positional arguments but 3 were given
+
+>>> combined_example(1, 2, kwd_only=3)
+
+
+>>> combined_example(1, standard=2, kwd_only=3)
+
+
+>>> combined_example(pos_only=1, standard=2, kwd_only=3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: combined_example() got an unexpected keyword argument 'pos_only'
+
+def foo(name, **kwds):
+    return 'name' in kwds
+
+>>> foo(1, **{'name': 2})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: foo() got multiple values for argument 'name'
+>>>
+
+def foo(name, /, **kwds):
+    return 'name' in kwds
+>>> foo(1, **{'name': 2})
+True
+
+#Arbitrary Argument Lists
+
+def write_multiple_items(file, separator, *args):
+    file.write(separator.join(args))
+    
+>>> def concat(*args, sep="/"):
+...     return sep.join(args)
+...
+
+>>> concat("earth", "mars", "venus")
+>>> concat("earth", "mars", "venus", sep=".")
+
+>>> list(range(3, 6))            # normal call with separate arguments
+>>> args = [3, 6]
+>>> list(range(*args))            # call with arguments unpacked from a list
+
+>>> def parrot(voltage, state='a stiff', action='voom'):
+...     print("-- This parrot wouldn't", action, end=' ')
+...     print("if you put", voltage, "volts through it.", end=' ')
+...     print("E's", state, "!")
+...
+>>> d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+>>> parrot(**d)
+
+>>> def make_incrementor(n):
+...     return lambda x: x + n
+...
+>>> f = make_incrementor(42)
+>>> f(0)
+
+>>> f(1)
+
+>>> pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+>>> pairs.sort(key=lambda pair: pair[1])
+>>> pairs
+
+>>> def my_function():
+...     """Do nothing, but document it.
+...
+...     No, really, it doesn't do anything.
+...     """
+...     pass
+...
+>>> print(my_function.__doc__)
+
+>>> def f(ham: str, eggs: str = 'eggs') -> str:
+...     print("Annotations:", f.__annotations__)
+...     print("Arguments:", ham, eggs)
+...     return ham + ' and ' + eggs
+...
+>>> f('spam')
+
+#Data Structure
+>>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+>>> fruits.count('apple')
+
+>>> fruits.count('tangerine')
+>>> fruits.index('banana')
+
+>>> fruits.index('banana', 4)  # Find next banana starting a position 4
+>>> fruits.reverse()
+>>> fruits
+
+>>> fruits.append('grape')
+>>> fruits
+
+>>> fruits.sort()
+>>> fruits
+
+>>> fruits.pop()
+
+>>> stack = [3, 4, 5]
+>>> stack.append(6)
+>>> stack.append(7)
+>>> stack
+>>> stack.pop()
+>>> stack
+>>> stack.pop()
+>>> stack.pop()
+>>> stack
+
+>>> from collections import deque
+>>> queue = deque(["Eric", "John", "Michael"])
+>>> queue.append("Terry")           # Terry arrives
+>>> queue.append("Graham")          # Graham arrives
+>>> queue.popleft()                 # The first to arrive now leaves
+>>> queue.popleft()                 # The second to arrive now leaves
+>>> queue                           # Remaining queue in order of arrival
+
+>>> squares = []
+>>> for x in range(10):
+...     squares.append(x**2)
+...
+>>> squares
+
+squares = list(map(lambda x: x**2, range(10)))
+
+squares = [x**2 for x in range(10)]
+
+>>> [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+
+>>> combs = []
+>>> for x in [1,2,3]:
+...     for y in [3,1,4]:
+...         if x != y:
+...             combs.append((x, y))
+...
+>>> combs
+
+>>> vec = [-4, -2, 0, 2, 4]
+>>> # create a new list with the values doubled
+>>> [x*2 for x in vec]
+>>> # filter the list to exclude negative numbers
+>>> [x for x in vec if x >= 0]
+>>> # apply a function to all the elements
+>>> [abs(x) for x in vec]
+>>> # call a method on each element
+>>> freshfruit = ['  banana', '  loganberry ', 'passion fruit  ']
+>>> [weapon.strip() for weapon in freshfruit]
+>>> # create a list of 2-tuples like (number, square)
+>>> [(x, x**2) for x in range(6)]
+>>> # the tuple must be parenthesized, otherwise an error is raised
+>>> [x, x**2 for x in range(6)]
+  File "<stdin>", line 1, in <module>
+    [x, x**2 for x in range(6)]
+               ^
+#SyntaxError: invalid syntax
+>>> # flatten a list using a listcomp with two 'for'
+>>> vec = [[1,2,3], [4,5,6], [7,8,9]]
+>>> [num for elem in vec for num in elem]
+
+>>> from math import pi
+>>> [str(round(pi, i)) for i in range(1, 6)]
+
+>>> matrix = [
+...     [1, 2, 3, 4],
+...     [5, 6, 7, 8],
+...     [9, 10, 11, 12],
+... ]
+
+>>> [[row[i] for row in matrix] for i in range(4)]
+
+>>> transposed = []
+>>> for i in range(4):
+...     transposed.append([row[i] for row in matrix])
+...
+>>> transposed
+
+>>> transposed = []
+>>> for i in range(4):
+...     # the following 3 lines implement the nested listcomp
+...     transposed_row = []
+...     for row in matrix:
+...         transposed_row.append(row[i])
+...     transposed.append(transposed_row)
+...
+>>> transposed
+
+>>> list(zip(*matrix))
+
+>>> a = [-1, 1, 66.25, 333, 333, 1234.5]
+>>> del a[0]
+>>> a
+
+>>> del a[2:4]
+>>> a
+
+>>> del a[:]
+>>> a
+[]
+
+>>> del a
+
+>>> t = 12345, 54321, 'hello!'
+>>> t[0]
+
+>>> t
+
+>>> # Tuples may be nested:
+... u = t, (1, 2, 3, 4, 5)
+>>> u
+
+>>> # Tuples are immutable:
+... t[0] = 88888
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+#TypeError: 'tuple' object does not support item assignment
+>>> # but they can contain mutable objects:
+... v = ([1, 2, 3], [3, 2, 1])
+>>> v
+
+>>> empty = ()
+>>> singleton = 'hello',    # <-- note trailing comma
+>>> len(empty)
+
+>>> len(singleton)
+
+>>> singleton
+
+>>> x, y, z = t
+
+>>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+>>> print(basket)                      # show that duplicates have been removed
+
+>>> 'orange' in basket                 # fast membership testing
+>>> 'crabgrass' in basket
+
+>>> # Demonstrate set operations on unique letters from two words
+...
+>>> a = set('abracadabra')
+>>> b = set('alacazam')
+>>> a                                  # unique letters in a
+>>> a - b                              # letters in a but not in b
+>>> a | b                              # letters in a or b or both
+>>> a & b                              # letters in both a and b
+>>> a ^ b                              # letters in a or b but not both
+
+>>> a = {x for x in 'abracadabra' if x not in 'abc'}
+>>> a
+
+>>> tel = {'jack': 4098, 'sape': 4139}
+>>> tel['guido'] = 4127
+>>> tel
+>>> tel['jack']
+>>> del tel['sape']
+>>> tel['irv'] = 4127
+>>> tel
+>>> list(tel)
+>>> sorted(tel)
+>>> 'guido' in tel
+>>> 'jack' not in tel
+
+
+>>> dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+
+>>>
+>>> {x: x**2 for x in (2, 4, 6)}
+
+>>>
+>>> dict(sape=4139, guido=4127, jack=4098)
+
+>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+>>> for k, v in knights.items():
+...     print(k, v)
+...
+
+>>> for i, v in enumerate(['tic', 'tac', 'toe']):
+...     print(i, v)
+...
+
+>>> questions = ['name', 'quest', 'favorite color']
+>>> answers = ['lancelot', 'the holy grail', 'blue']
+>>> for q, a in zip(questions, answers):
+...     print('What is your {0}?  It is {1}.'.format(q, a))
+...
+
+>>> for i in reversed(range(1, 10, 2)):
+...     print(i)
+...
+
+>>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+>>> for f in sorted(set(basket)):
+...     print(f)
+...
+
+>>> import math
+>>> raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]
+>>> filtered_data = []
+>>> for value in raw_data:
+...     if not math.isnan(value):
+...         filtered_data.append(value)
+...
+>>> filtered_data
+
+>>> string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
+>>> non_null = string1 or string2 or string3
+>>> non_null
+
+(1, 2, 3)              < (1, 2, 4)
+[1, 2, 3]              < [1, 2, 4]
+'ABC' < 'C' < 'Pascal' < 'Python'
+(1, 2, 3, 4)           < (1, 2, 4)
+(1, 2)                 < (1, 2, -1)
+(1, 2, 3)             == (1.0, 2.0, 3.0)
+(1, 2, ('aa', 'ab'))   < (1, 2, ('abc', 'a'), 4)
